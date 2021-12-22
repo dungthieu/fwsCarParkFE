@@ -1,0 +1,27 @@
+.form-addbooking .form-group{
+    width: 550px;
+    position: relative;
+}
+.form-addbooking .list-btn{
+    margin-left: 200px;
+}
+.form-addbooking .form-date{
+    display: grid;
+    width: 350px;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 5px;
+}
+.form-date .child-input{
+    width: 250px;
+    border: 1px solid #ccc;
+}
+.form-date label{
+    text-align: center;
+    background:#ccc;
+    margin: 0;
+    line-height: 36px;
+
+}
+.form-addbooking label{
+    cursor: pointer;
+}

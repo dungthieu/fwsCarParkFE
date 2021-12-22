@@ -1,0 +1,13 @@
+.btn[disabled]{
+    cursor: not-allowed !important;
+    opacity: .65;
+    box-shadow: none;
+}
+
+.alert-err{
+    padding: 4px;
+    margin-top: 5px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+

@@ -1,0 +1,26 @@
+.form-group{
+    display: flex;
+    width: 500px;
+    position: relative;
+    justify-content: space-between;
+}
+.form-control{
+    width: 350px;
+}
+.list-btn{
+    width: 550px;
+    margin-left: 150px;
+}
+
+.form-group .value-required{
+    color: red !important;
+    font-weight: bold;
+}
+.show-required{
+    position: absolute;
+    top: 20%;
+    left: 100%;
+    width: 200px;
+    color: #a94442;
+    margin-left: 10px;
+}

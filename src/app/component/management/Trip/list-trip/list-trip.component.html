@@ -1,0 +1,44 @@
+<div class="ml-2" style="width: calc( 100vw - 244px)">
+    <h2 class="my-2">
+      Trip list
+    </h2>
+    <div class="filter">
+      <div class="form-inline">
+      
+      </div>
+      <div class="form-inline float-right">Search by name:
+        <div class="form-group ml-1">
+          <input class="form-control" type="text" ng-model="searchName" placeholder="Type name to search" />
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-click="orderBy('name')">No</th>
+          <th ng-click="orderBy('country')">Destination</th>
+          <th ng-click="orderBy('salary')">Departure time</th>
+          <th ng-click="orderBy('salary')">Driver</th>
+          <th ng-click="orderBy('email')">Car type</th>
+          <th ng-click="orderBy('email')">Booked ticket number</th>
+          <th ng-click="orderBy('email')">Action</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let trip of trips; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ trip.destination }}</td>
+          <td>{{ trip.departureDateTime | date:"HH:mm"}}</td>
+          <td>{{ trip.driver }}</td>
+          <td>{{ trip.carType }}</td>
+          <td>{{ trip.ticketNumber }}</td>
+          <td>
+            <button class="btn mr-2 btn-primary" ng-click="editUser(user)">view</button>
+            <button class="btn btn-danger" ng-click="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

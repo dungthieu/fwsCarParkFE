@@ -1,0 +1,114 @@
+<div class="header">
+    <div class="h-left">
+        <i></i>
+        <h2>Carpark Management</h2>
+    </div>
+    <div class="h-right">
+        <div class="h-name">
+           Welcome {{userName}}
+        </div>
+        <div class="h-logout" routerLink="">
+            LogOut
+        </div>
+    </div>
+</div>
+<div class="section">
+    <!-- menu -->
+    <div class="row" id="body-row">
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <ul class="list-group">
+                <!-- Menu with submenu -->
+                <a class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Carpark Manager</span>
+                </a>
+
+                <!-- car -->
+                <a href="#submenu" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Car Manager</span>
+                </a>
+                <div id='submenu' class="collapse sidebar-submenu">
+                    <a routerLink="/carpark-manager/car/list-car"
+                        class="list-group-item list-group-item-action bg-dark text-white" routerLinkActive="active">
+                        <span class="menu-collapsed">Car List</span>
+                    </a>
+                    <a routerLink="/carpark-manager/car/add-car"
+                        class="list-group-item list-group-item-action bg-dark text-white" routerLinkActive="active">
+                        <span class="menu-collapsed">Add Car</span>
+                    </a>
+                </div>
+
+                <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">BookingOffice Manager</span>
+                </a>
+                <div id='submenu1' class="collapse sidebar-submenu">
+                    <a routerLink="/carpark-manager/bookingoffice/list-bookingoffice"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">BookingOffice List</span>
+                    </a>
+                    <a routerLink="/carpark-manager/bookingoffice/add-bookingoffice"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Add BookingOffice</span>
+                    </a>
+                </div>
+
+                <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Parking lot Manager</span>
+                </a>
+                <div id='submenu2' class="collapse sidebar-submenu">
+                    <a routerLink="/carpark-manager/parkinglot/list-parkinglot"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Parking lot List</span>
+                    </a>
+                    <a routerLink="/carpark-manager/parkinglot/add-parkinglot"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Add Parking lot </span>
+                    </a>
+                </div>
+
+                <a href="#submenu3" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Trip Manager</span>
+                </a>
+                <div id='submenu3' class="collapse sidebar-submenu">
+                    <a routerLink="/carpark-manager/trip/list-trip"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Trip List</span>
+                    </a>
+                    <a routerLink="/carpark-manager/trip/add-trip"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Add Trip</span>
+                    </a>
+                </div>
+
+                <a href="#submenu4" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Ticket Manager</span>
+                </a>
+                <div id='submenu4' class="collapse sidebar-submenu">
+                    <a routerLink="/carpark-manager/ticket/list-ticket"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Ticket List</span>
+                    </a>
+                    <a routerLink="/carpark-manager/ticket/add-ticket"
+                        class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Add Ticket</span>
+                    </a>
+                </div>
+
+                <!-- <a routerLink="" class="bg-dark list-group-item list-group-item-action">
+                    <span class="menu-collapsed">Tasks</span>
+                </a> -->
+                <!-- /END Separator -->
+                <!-- <a class="bg-dark list-group-item list-group-item-action">
+                    <span class="menu-collapsed">Calendar</span>
+                </a> -->
+            </ul><!-- List Group END-->
+        </div><!-- sidebar-container END -->
+    </div>
+    <!-- action -->
+    <router-outlet> </router-outlet>
+</div>

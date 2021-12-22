@@ -1,0 +1,45 @@
+.login-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+/* img */
+  .logo-container img {
+    object-fit: cover;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  /* login */
+  .vertical-center {
+   overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form {
+      padding-top: 50px;
+      overflow: hidden;
+  }
+  
+  
+  
+  .btn-primary {
+    background-color: #003489;
+    border: #003489;
+  }
+  a {
+    color: #003489;
+  }
+  @media (max-width: 575.98px) {
+    .login-container {
+      grid-template-columns: 100%;
+    }
+    .logo-container {
+      display: none;
+    }
+  }
+  

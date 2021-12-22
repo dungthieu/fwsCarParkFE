@@ -1,0 +1,44 @@
+<div class="crude-form__wrapper" ng-show="triggerForm" class="p-2">
+    <h3 ng-show="addForm">Add Parking lot</h3>
+    <form name="userForm" #parkingLot="ngForm">
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="name">Parking name <span class="value-required">(*)</span></label>
+            <input class="form-control" id="name" type="text" name="name" [(ngModel)]="parkinglot.name" #name="ngModel"
+                placeholder="Enter parking name" required />
+            <p class="show-required" *ngIf="!name.valid && isShowRequired">Parking name is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="place">Place<span class="value-required">(*)</span></label>
+            <select class="form-control" id="place" type="text" name="place" [(ngModel)]="parkinglot.place"
+                #place="ngModel" required>
+                <option *ngFor="let item of places" [value]="item">{{item}}</option>
+            </select>
+
+            <p class="show-required" *ngIf="!place.valid && isShowRequired">Place is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="area">Area<span class="value-required">(*)</span></label>
+            <input class="form-control" id="area" type="text" name="area" [(ngModel)]="parkinglot.area" #area="ngModel"
+                placeholder="Enter area" required />
+                <p class="show-required blank" >(m<small>2</small>)</p>
+            <p class="show-required next" *ngIf="!area.valid && isShowRequired">Area is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="price">Price<span class="value-required">(*)</span></label>
+
+            <input class="form-control" id="price" type="text" name="price" [(ngModel)]="parkinglot.price"
+                #price="ngModel" placeholder="Enter area" required />
+                <p class="show-required blank" >VNĐ</p>
+            <p class="show-required next" *ngIf="!price.valid && isShowRequired">Price is required</p>
+        </div>
+
+        <div class="list-btn">
+            <button class="btn btn-primary ml-2" (click)="clearRequired(); parkingLot.reset()"> Reset</button>
+            <button class="btn btn-primary ml-2" (click)="addParkingLot(parkingLot.form)"> Add</button>
+        </div>
+    </form>
+</div>

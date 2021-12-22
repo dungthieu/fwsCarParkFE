@@ -1,0 +1,42 @@
+<div class="header">
+    <div class="h-left">
+        <i></i>
+        <h2>Employee</h2>
+    </div>
+    <div class="h-right">
+        <div class="h-name">
+           Welcome {{userName}}
+        </div>
+        <div class="h-logout" (click)="onLogout()">
+            LogOut
+        </div>
+    </div>
+</div>
+<div class="section">
+    <!-- menu -->
+    <div class="row" id="body-row">
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <ul class="list-group">
+                <!-- Menu with submenu -->
+                <a class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Dashboard</span>
+                </a>
+                <!--  -->
+                <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <span class="menu-collapsed">Employee Management</span>
+                </a>
+                <div id='submenu2'  class="collapse sidebar-submenu">
+                    <a routerLink="/admin-hrm/list-employee" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Employee List</span>
+                    </a>
+                    <a routerLink="/admin-hrm/add-employee" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Add Employee</span>
+                    </a>
+                </div>
+            </ul><!-- List Group END-->
+        </div><!-- sidebar-container END -->
+    </div>
+    <router-outlet> </router-outlet>
+</div>

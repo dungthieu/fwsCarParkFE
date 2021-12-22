@@ -1,0 +1,83 @@
+<div class="crude-form__wrapper" class="p-2">
+    <h3>Add employee</h3>
+    <form #formEmployee="ngForm">
+        <div class="form-group">
+            <label for="name">Full Name <span class="value-required">(*)</span></label>
+            <input class="form-control" id="name" type="text" name="fullName" placeholder="Enter full name" required
+                [(ngModel)]="employee.fullName" #fullname="ngModel" />
+            <p class="show-required" *ngIf="!fullname.valid && isShowRequired">Full Name is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number <span class="value-required">(*)</span></label>
+            <input class="form-control" id="phoneNumber" type="text" name="PhoneNumber" placeholder="Enter phone number"
+                required [(ngModel)]="employee.phoneNumber" #phonenumber="ngModel" />
+            <p class="show-required" *ngIf="!phonenumber.valid && isShowRequired">Phone Number is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="dateOfBirth">DateOfBirth <span class="value-required">(*)</span></label>
+            <input class="form-control" id="dateOfBirth" type="datetime" name="dateOfBirth" placeholder="dd/mm/yyy"
+                required [(ngModel)]="employee.dateOfBirth" #dateOfBirth="ngModel" />
+            <p class="show-required" *ngIf="isShowRequired && !isValidateDate">DateOfBirth is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Sex <span class="value-required">(*)</span></label>
+            <div class="group-type">
+                <!-- -->
+                <input type="radio" id="male" [value]="sex[0]" [(ngModel)]="employee.sex"
+                    [ngModelOptions]="{standalone: true}" /> <label for="male" class="mx-2 font-weight-bold">Male
+                </label>
+                <input type="radio" id="feMale" [value]="sex[1]" [(ngModel)]="employee.sex"
+                    [ngModelOptions]="{standalone: true}" /> <label for="feMale" class="mx-2 font-weight-bold">Female
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address </label>
+            <input class="form-control" id="address" type="text" name="address" placeholder="Enter address" required
+                [(ngModel)]="employee.address" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input class="form-control" id="email" type="email" name="email" placeholder="Enter email" required
+                [(ngModel)]="employee.email" #email ="ngModel" />
+                <p class="show-required" *ngIf="!isValidateEmail && isShowRequired">Email is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="account">Account <span class="value-required">(*)</span></label>
+            <input class="form-control" id="account" type="text" name="account" placeholder="Enter account" required
+                [(ngModel)]="employee.account" #account="ngModel" />
+            <p class="show-required" *ngIf="!account.valid && isShowRequired">Account is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password <span class="value-required">(*)</span></label>
+            <input class="form-control" id="password" type="password" name="password" placeholder="Enter password"
+                required [(ngModel)]="employee.password" #password="ngModel" />
+            <p class="show-required" *ngIf="!password.valid && isShowRequired">Password is required</p>
+        </div>
+
+        <div class="form-group">
+            <label for="department">Department <span class="value-required">(*)</span></label>
+            <select class="form-control" name="department" id="department" [(ngModel)]="employee.department"
+                #departmentModel="ngModel" required>
+                <option *ngFor="let item of department" [value]="item">{{item}}</option>
+            </select>
+            <p class="show-required" *ngIf="!departmentModel.valid && isShowRequired">Department is required</p>
+        </div>
+
+        <div class="list-btn">
+            <button type="submit" class="btn btn-primary" (click)="backToList();" >
+                Back </button>
+            <button type="button" class="btn btn-primary ml-2" (click)="formEmployee.reset(); clearRequired()">
+                Reset</button>
+            <button type="submit" class="btn btn-primary ml-2" (click)="addEmployee(formEmployee.form.invalid,formEmployee.form)" >
+                Add</button>
+        </div>
+    </form>
+</div>

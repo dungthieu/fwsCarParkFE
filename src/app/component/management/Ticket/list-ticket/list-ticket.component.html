@@ -1,0 +1,40 @@
+<div class="ml-2" style="width: calc( 100vw - 244px)">
+    <h2 class="my-2">
+      Ticket list
+    </h2>
+    <div class="filter">
+      <div class="form-inline">
+       
+      </div>
+      <div class="form-inline float-right">Search by name:
+        <div class="form-group ml-1">
+          <input class="form-control" type="text" ng-model="searchName" placeholder="Type name to search" />
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-click="orderBy('name')">Id</th>
+          <th ng-click="orderBy('country')">Trip</th>
+          <th ng-click="orderBy('salary')">License plate</th>
+          <th ng-click="orderBy('salary')">Customer</th>
+          <th ng-click="orderBy('email')">Booking time</th>
+          <th ng-click="orderBy('email')">Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let ticket of tickets; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ ticket.destination}}</td>
+          <td>{{ ticket.licensePlate }}</td>
+          <td>{{ ticket.customer }}</td>
+          <td>{{ ticket.bookingTime }}</td>
+          <td>
+            <button class="btn mr-2 btn-primary" ng-click="editUser(user)">view</button>
+            <button class="btn btn-danger" ng-click="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

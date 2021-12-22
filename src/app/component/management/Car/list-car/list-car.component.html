@@ -1,0 +1,42 @@
+<div class="ml-2" style="width: calc( 100vw - 244px)">
+    <h2 class="my-2">
+      Car list
+    </h2>
+    <div class="filter">
+      <div class="form-inline">
+       
+      </div>
+      <div class="form-inline float-right">Search by name:
+        <div class="form-group ml-1">
+          <input class="form-control" type="text" ng-model="searchName" placeholder="Type name to search" />
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-click="orderBy('name')">Licesent plate</th>
+          <th ng-click="orderBy('country')">Car type</th>
+          <th ng-click="orderBy('salary')">Car color</th>
+          <th ng-click="orderBy('salary')">Company</th>
+          <th ng-click="orderBy('email')">Parking lot</th>
+          <th ng-click="orderBy('email')">Action</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let car of cars">
+          <td>{{ car.licensePlate }}</td>
+          <td>{{ car.carType }}</td>
+          <td>{{ car.carColor }}</td>
+          <td>{{ car.company }}</td>
+          <td>{{ car.parkingLotName }}</td>
+          <td>
+            <button class="btn mr-2 btn-primary" ng-click="editUser(user)">view</button>
+            <button class="btn btn-danger" ng-click="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

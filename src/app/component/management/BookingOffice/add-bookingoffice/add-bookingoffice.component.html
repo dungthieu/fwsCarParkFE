@@ -1,0 +1,71 @@
+<div class="crude-form__wrapper" ng-show="triggerForm" class="p-2">
+    <h3 ng-show="addForm" class="mb-3">Add Booking office</h3>
+    <form name="userForm" #formBookingOffice="ngForm" class="form-addbooking">
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="name">Booking office name <span
+                    class="value-required">(*)</span></label>
+            <input class="form-control" id="name" type="text" name="name" [(ngModel)]="bookingoffice.name"
+                #fullname="ngModel" placeholder="Enter booking office name" required />
+            <p class="show-required" *ngIf="!fullname.valid && isShowRequired">Full Name is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="tripId">Trip <span class="value-required">(*)</span></label>
+
+            <select class="form-control" name="tripId" id="tripId" [(ngModel)]="bookingoffice.tripId" #tripId="ngModel"
+                required>
+                <option *ngFor="let item of trips" [value]="item.id">{{item.destination}}</option>
+            </select>
+
+
+            <p class="show-required" *ngIf="!tripId.valid && isShowRequired">Trip is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="phonenumber">Phone number <span
+                    class="value-required">(*)</span></label>
+            <input class="form-control" id="phonenumber" type="text" name="phonenumber"
+                [(ngModel)]="bookingoffice.phoneNumber" #phoneNumber="ngModel" placeholder="Enter phone number"
+                required />
+            <p class="show-required" *ngIf="!phoneNumber.valid && isShowRequired">Phone Number is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="place">Place <span class="value-required">(*)</span></label>
+
+            <select class="form-control" id="place" type="text" name="place" [(ngModel)]="bookingoffice.place" 
+                #place="ngModel" required>
+                <option *ngFor="let item of places" [value]="item">{{item}}</option>
+            </select>
+            <p class="show-required" *ngIf="!place.valid && isShowRequired">Place is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="price">Price <span class="value-required">(*)</span></label>
+            <input class="form-control" id="price" type="text" name="price" [(ngModel)]="bookingoffice.price"
+                #price="ngModel" placeholder="Enter price" required />
+            <p class="show-required" *ngIf="!price.valid && isShowRequired">Price is required</p>
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="dealine">Contact deadline <span
+                    class="value-required">(*)</span></label>
+            <div class="form-date">
+                <label for="fromdate">From date</label>
+                <input class="form-control child-input" id="fromdate" type="text" name="fromdate"
+                    [(ngModel)]="bookingoffice.fromDate" #fromDate="ngModel" placeholder="dd/mm/yyyy" required />
+                <label for="todate">To date</label>
+                <input class="form-control child-input" id="todate" type="text" name="todate"
+                    [(ngModel)]="bookingoffice.toDate" #toDate="ngModel" placeholder="dd/mm/yyyy" required />
+            </div>
+            <p class="show-required" *ngIf="!isValidateDate && isShowRequired">DeadLine is required</p>
+        </div>
+
+        <div class="list-btn">
+            <button class="btn btn-primary ml-2" (click)="formBookingOffice.reset(); clearRequired()">
+                Reset</button>
+            <button class="btn btn-primary ml-2" (click)="addBookingOffice(formBookingOffice.form)">
+                Add</button>
+        </div>
+    </form>
+</div>

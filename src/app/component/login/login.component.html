@@ -1,0 +1,42 @@
+<div class="login-container">
+
+  <!-- bg -->
+  <div class="logo-container">
+    <img width="100%" src="./../../../assets/image/jpg/bg-01.jpg" alt="">
+  </div>
+  <!--  login -->
+  <div class=" vertical-center login-form text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+          <!-- form -->
+          <form (ngSubmit)="formSubmit()" #login="ngForm">
+            <img class="mb-4" src="./../../../assets/image/common/carpark-logo-final.png" width="200">
+            <h1 class="h3 mb-3 fw-normal">Login</h1>
+            <!-- user -->
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingInput" required placeholder="UserName"
+                [(ngModel)]="user.account" [ngModelOptions]="{standalone: true}" 
+                #userName="ngModel"  > 
+            </div>
+
+            <!-- pass  -->
+            <div class="form-floating mt-2">
+              <input type="password" class="form-control" id="floatingPassword" required placeholder="Password"
+                [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" 
+                #pass="ngModel" >
+            </div>
+
+            <!-- routerLink="/carpark-manager" -->
+            <button class="w-100 mt-4 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">
+              <a id="forgot-password">Forgot your password?</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

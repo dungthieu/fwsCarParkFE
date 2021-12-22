@@ -1,0 +1,58 @@
+<div class="crude-form__wrapper" ng-show="triggerForm" class="p-2">
+    <h3 ng-show="addForm">Add Trip </h3>
+    <form name="userForm" #tripForm="ngForm">
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="destination">Destination<span class="value-required">(*)</span></label>
+            <input class="form-control" id="destination" type="text" name="destination" [(ngModel)]="trip.destination"
+                #destination="ngModel" placeholder="Enter destination" required />
+            <p class="show-required" *ngIf="!destination.valid && isShowRequired">Destination is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="departureTime">Departure time<span
+                    class="value-required">(*)</span></label>
+            <input class="form-control" id="departureTime" type="text" name="departureTime"
+                [(ngModel)]="trip.departureTime" #departureTime="ngModel" placeholder="--:-- --" required />
+            <p class="show-required" *ngIf="!isValidateTime&& isShowRequired">Departure time is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="driver">Driver<span class="value-required">(*)</span></label>
+            <input class="form-control" id="driver" type="text" name="driver" [(ngModel)]="trip.driver"
+                #driver="ngModel" placeholder="Enter driver" required />
+            <p class="show-required" *ngIf="!driver.valid && isShowRequired">Driver is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="carType">Car type<span class="value-required">(*)</span></label>
+            <input class="form-control" id="carType" type="text" name="carType" [(ngModel)]="trip.carType"
+                #carType="ngModel" placeholder="Enter car type" required />
+            <p class="show-required" *ngIf="!carType.valid && isShowRequired">Car type is required</p>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="ticketNumber">maximum online ticket number <span
+                    class="value-required">(*)</span></label>
+            <input class="form-control" id="ticketNumber" type="text" name="ticketNumber"
+                [(ngModel)]="trip.ticketNumber" #ticketNumber="ngModel"/>
+          
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold" for="departureDate">Departure date<span
+                    class="value-required">(*)</span></label>
+            <input class="form-control" id="departureDate" type="text" name="departureDate"
+                [(ngModel)]="trip.departureDate" #departureDate="ngModel" placeholder="dd/mm/yyyy" required />
+            <p class="show-required" *ngIf="!isValidateDate && isShowRequired">Departure date is required</p>
+        </div>
+
+        <div class="list-btn">
+
+            <button class="btn btn-primary ml-2" (click)="tripForm.reset();clearRequired()">
+                Reset</button>
+            <button class="btn btn-primary ml-2" (click)="addNewTrip(tripForm.form)">
+                Add</button>
+        </div>
+    </form>
+</div>
